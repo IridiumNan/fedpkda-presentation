@@ -24,4 +24,4 @@
 - 参数解耦方法 → 忽略跨客户端信息
 - 简单原型方法 → 未充分处理隐私和噪声问题
 
-[Next: FedPKDA](./fedpkda.md)
+[Previous: 联邦学习基础概念](./basic_backgroud.md)              [Next: FedPKDA](./fedpkda.md)
