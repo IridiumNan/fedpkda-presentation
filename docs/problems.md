@@ -26,6 +26,6 @@
 
 ---
 
-- [Previous: 联邦学习基础概念](./basic_backgroud.md)
+- [Previous: 联邦学习基础概念](./basic_background.md)
 
 - [Next: FedPKDA](./fedpkda.md)

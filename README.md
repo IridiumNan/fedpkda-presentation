@@ -1,6 +1,6 @@
 # FedPKDA 论文分享
 
-- [基础背景](/docs/basic_backgroud.md)
+- [基础背景](/docs/basic_background.md)
 
 - [现有问题](/docs/problems.md)
 
