@@ -1,11 +1,13 @@
-# FedPKDA 论文分享 —— Presentation 提纲
+# FedPKDA 论文分享
 
-## [基础背景](/docs/basic_backgroud.md)
+- [基础背景](/docs/basic_backgroud.md)
 
-## [现有问题](/docs/problems.md)
+- [现有问题](/docs/problems.md)
 
-## [FedPKDA 的解决方案](/docs/fedpkda.md)
+- [FedPKDA 的解决方案](/docs/fedpkda.md)
 
-## [总结](/docs/summary.md)
+- [总结](/docs/summary.md)
 
-## [数学原理](/docs/math.md)
+- [数学原理](/docs/math.md)
+
+- [论文](./FedPKDA.pdf)
