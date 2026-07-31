@@ -1,4 +1,4 @@
-# Technical Deep-Dive: FedPKDA (AAAI 2026)**Presenter:** [Your Name]
+# Technical Deep-Dive: FedPKDA (AAAI 2026)**Presenter:**
 
 **Topic:** Personalized Federated Learning with Privacy-Preserving Knowledge Dynamic Alignment
 
