@@ -4,12 +4,12 @@
 
 ## 1.1 联邦学习的定义与背景
 
+![机器学习图示](./images/pic1.png)
+
 - 传统机器学习
 将大量的原始数据和信息上传到中心服务器
 依靠这些数据训练出强大的中心模型
 中心模型直接发放给各个客户端使用
-
-[机器学习图示](./images/pic1.png)
 
 - 数据隐私日益重要的时代背景
 各种保护隐私的法律不断完善
@@ -23,9 +23,9 @@ AI训练对于数据有非常大的需求
 - 联邦学习：数据留在本地，模型参数/梯度通信
 
 > [!TIP]
-> 两者的直接对比
-> Centralized machine learning: move the data to the computation
-> Federated (machine) Learning: move the computation to the data
+> 两者的直接对比<br>
+> Centralized machine learning: move the data to the computation<br>
+> Federated (machine) Learning: move the computation to the data<br>
 
 也就是说 **联邦学习不传输数据, 而是传输由原始数据计算得来的经验**
 在机器学习中，经验的载体是 **模型的权重或者梯度**
