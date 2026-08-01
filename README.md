@@ -37,6 +37,7 @@ Personalized Federated Learning with Privacy-Preserving Knowledge Dynamic Alignm
 
 - [时间激活函数 φ(t)](/docs/utils/function.md#时间激活函数)
 - [Mahalanobis Distance](/docs/utils/ma_distance.md#mahalanobis-distance)
+- [实验结果](/docs/experiment.md)
 
 ### 论文
 
