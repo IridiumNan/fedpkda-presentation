@@ -30,7 +30,7 @@ p_A = np.array(
     [3.5, 3.5]
 )  # Point A: Far in space, but aligns with the data distribution
 p_B = np.array(
-    [-2.0, 1.3]
+    [-3.0, 2.0]
 )  # Point B: Close to center, but completely violates the correlation
 
 # 3. Eigenvalue decomposition for whitening transformation
@@ -44,37 +44,18 @@ p_A_trans = p_A @ whitening_matrix.T
 p_B_trans = p_B @ whitening_matrix.T
 
 # 5. Distance Calculations
-# Euclidean Distances (Original Space)
 euclid_A = np.linalg.norm(p_A - p_center)
 euclid_B = np.linalg.norm(p_B - p_center)
 
-# Mahalanobis Distances (Original Space via formula)
 inv_cov = np.linalg.inv(cov)
 mahal_A = np.sqrt((p_A - p_center).T @ inv_cov @ (p_A - p_center))
 mahal_B = np.sqrt((p_B - p_center).T @ inv_cov @ (p_B - p_center))
 
-# Verify Euclidean Distances in Transformed Space (Should equal Mahalanobis)
-euclid_A_trans = np.linalg.norm(p_A_trans - p_center_trans)
-euclid_B_trans = np.linalg.norm(p_B_trans - p_center_trans)
-
-# Print Verification
-print("=== Original Space (Euclidean) ===")
-print(f"Euclidean Distance to A (In-distribution): {euclid_A:.4f}")
-print(
-    f"Euclidean Distance to B (Outlier):        {euclid_B:.4f}  <-- Misleadingly shorter!"
-)
-
-print("\n=== Transformed Space / Mahalanobis ===")
-print(f"Mahalanobis Distance to A:               {mahal_A:.4f}")
-print(
-    f"Mahalanobis Distance to B:               {mahal_B:.4f}  <-- Correctly identifies B as farther!"
-)
-
 # 6. Plotting
-fig, ax = plt.subplots(1, 2, figsize=(14, 6))
+fig, ax = plt.subplots(1, 2, figsize=(15, 6))
 ax_flat = np.asarray(ax).flatten()
 
-# Left plot: Original space (Elongated Ellipse)
+# --- Left plot: Original space (Elongated Ellipse with Principal Axes lines) ---
 ax_flat[0].scatter(X[:, 0], X[:, 1], alpha=0.4, color="gray", label="Data Distribution")
 ax_flat[0].scatter(
     p_center[0], p_center[1], color="black", s=120, zorder=5, marker="X", label="Center"
@@ -95,12 +76,25 @@ ax_flat[0].scatter(
     zorder=5,
     label=f"Point B (Euclid={euclid_B:.1f})",
 )
-ax_flat[0].set_title("Original Space: B looks closer than A")
+
+for i in range(len(eigenvalues)):
+    direction = eigenvectors[:, i]
+    # slope = delta_y / delta_x
+    slope_val = direction[1] / direction[0]
+    ax_flat[0].axline(
+        xy1=(p_center[0], p_center[1]),
+        slope=slope_val,
+        color="blue",
+        linewidth=2,
+        label="New Principal Axes (Eigenvectors)" if i == 0 else "",
+    )
+
+ax_flat[0].set_title("Original Space: B looks closer, Principal Axes shown in Blue")
 ax_flat[0].axis("equal")
 ax_flat[0].legend()
-ax_flat[0].grid(True, linestyle="--")
+ax_flat[0].grid(True)
 
-# Right plot: Transformed space (Perfect Circle)
+# --- Right plot: Transformed space (Perfect Circle with Standard Axes) ---
 ax_flat[1].scatter(
     X_transformed[:, 0],
     X_transformed[:, 1],
@@ -133,10 +127,17 @@ ax_flat[1].scatter(
     zorder=5,
     label=f"Point B (Mahal={mahal_B:.1f})",
 )
-ax_flat[1].set_title("Whitened Space: B is correctly pushed farther")
+
+# Plot the standard horizontal and vertical axes in the new space for comparison
+ax_flat[1].axhline(y=0, color="blue", linewidth=2, label="Standard Coordinates")
+ax_flat[1].axvline(x=0, color="blue", linewidth=2)
+
+ax_flat[1].set_title("Whitened Space: Blue Axes rotated to standard X/Y grid")
 ax_flat[1].axis("equal")
 ax_flat[1].legend()
-ax_flat[1].grid(True, linestyle="--")
+ax_flat[1].grid(
+    True,
+)
 
 plt.tight_layout()
 plt.show()
