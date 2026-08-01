@@ -23,7 +23,9 @@
 - **模块二：服务器端几何滤波**<br>
   [K-Means 聚类](./fedpkda.md#33-模块二-服务器端几何滤波) 获取几何中心，[马氏距离](./utils/ma_distance.md) 衡量偏离程度，反距离**加权聚合**滤除噪声，生成干净全局原型
 - **模块三：客户端知识动态对齐**<br>
-  双对齐损失 $$\mathcal{L}_{align} = \omega_{local}(1-\varphi(t))\mathcal{L}_{LA} + \omega_{global}\varphi(t)\mathcal{L}_{GA}$$，[时间激活函数 φ(t)](./utils/function.md) 控制权重：**早期偏向本地、后期偏向全局**，缓解表示偏差
+  双对齐损失
+$\mathcal{L}\_{align} = \omega\_{local}(1-\varphi(t))\mathcal{L}\_{LA} + \omega\_{global}\varphi(t)\mathcal{L}\_{GA}$
+[时间激活函数 φ(t)](./utils/function.md) 控制权重：**早期偏向本地、后期偏向全局**，缓解表示偏差
 - **模型聚合**：Fisher Information Matrix 重要性加权，保护高密度/稀有本地知识不被平均掉
 - **效果**：超越 12 个 SOTA 基线——CIFAR-100 (β=0.3) 上 **44.91%** 准确率，超亚军 FedAS **4.23%**；DLG 攻击下 PSNR ≈ 6.9，重建图像 ≈ 随机噪声
 

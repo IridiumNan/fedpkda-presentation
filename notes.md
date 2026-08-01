@@ -49,8 +49,13 @@
 - 如何使用 Prototype ?
 
 用于计算 本地的样本和原型之间计算距离
-得到 $\mathcal{L}_{LA}$ 本地的损失
-以及 $\mathcal{L}_{GA}$ 对于全局损失
+得到
+$\mathcal{L}\_{LA}$
+本地的损失
+
+以及
+$\mathcal{L}\_{GA}$
+对于全局损失
 
 ---
 
@@ -64,19 +69,19 @@
 
 - step1
 
-$\mathcal{L}_{align} = \omega_{local} \cdot (1 - \varphi(t)) \cdot \mathcal{L}_{LA} + \omega_{global} \cdot \varphi(t) \cdot \mathcal{L}_{GA}$
+$\mathcal{L}\_{align} = \omega\_{local} \cdot (1 - \varphi(t)) \cdot \mathcal{L}\_{LA} + \omega\_{global} \cdot \varphi(t) \cdot \mathcal{L}\_{GA}$
 
 计算**双对齐**的损失
 
 - step2
 
-$\mathcal{L}_{CE} = - E_{(x,y) \sim D_i}[log {}{p(y|x)}]$
+$\mathcal{L}\_{CE} = - E\_{(x,y) \sim D\_i}[log {}{p(y|x)}]$
 
 计算**标准的有监督学习的交叉熵损失**
 
 - step3
 
-$\mathcal{L} = \mathcal{L}_{CE} + \mathcal{L}_{align}$
+$\mathcal{L} = \mathcal{L}\_{CE} + \mathcal{L}\_{align}$
 
 将两个损失相加得到总的损失
 
