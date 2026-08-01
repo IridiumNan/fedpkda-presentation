@@ -4,8 +4,8 @@
 
 ## 3.1 总体框架概览
 
-- 三大核心模块关系图
 - 数据流向：客户端 → 服务器 → 客户端
+![总体流程](./images/pic8_overall.png)
 
 ## 3.2 模块一: 跨客户端原型隐私保护
 
@@ -16,7 +16,7 @@
 
 ## 3.3 模块二: 服务器端几何滤波
 
-- K-Means **聚类**获取几何中心
+- [K-Means聚类](https://en.wikipedia.org/wiki/K-means_clustering) 获取几何中心
 - [马氏距离](/docs/utils/ma_distance.md) 计算各原型**偏离程度**
 - 反距离**加权聚合**
 - 生成干净全局原型

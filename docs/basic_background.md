@@ -42,17 +42,8 @@ AI训练对于数据有非常大的需求
 ## 1.3 联邦学习的典型架构
 
 - Client-Server 架构
-
-> cilent: 数据在本地, 训练在本地, 传输本地模型的权重或者梯度
-> server: 接收多个 client 的权重或者梯度, 更新全局模型, 广播模型
-
 - 通信轮次 (Communication Round)
-
-> 2 -> 5
-
 - 参与率 (Participation Rate)
-
-> 本轮选中的客户端数量 / 参与联邦学习的全部客户端数量
 
 ---
 
