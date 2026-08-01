@@ -2,7 +2,7 @@
 
 [back: fedpkda](../fedpkda.md)
 
-- 公式
+- 公式<br>
   $φ(t) = \frac{log(1 + e^t) - log(1 + e^{-t})}{log(1 + e^t) + log(1 + e^{-t})}$
 
 - 函数图像
