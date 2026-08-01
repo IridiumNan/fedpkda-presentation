@@ -32,7 +32,18 @@ $\mathcal{L}\_{align} = \omega\_{local}(1-\varphi(t))\mathcal{L}\_{LA} + \omega\
 > [!TIP]
 > 一句话总结：**用带噪原型 + 几何滤波守住隐私，用动态对齐兼顾个性化与全局共识。**
 
+## 局限性
+
+- 实际跑实验的时候， 发现开销确实比较大， 需要花费更多的时间进行原型的计算以及聚类操作
+- 时间消耗比 FedAvg : FedPKDA 约等于 1 : 10
+- 以及现在实验使用的 cnn 模型太小， 准确率都不是很高， 没有办法证明在实践上的可行性，需要进一步检验
+
+> 自己跑的实验说明 FedPKDA 对于 UNSW-NB15 (dnn 模型)稳定性非常的强, 在迭代的过程中， 准确率非常稳定
+> 这是论文中没有提到的优势
+> 但是没有整理到现在的文档当中， 感兴趣的可以自己跑一下实施
+
 ---
 
-[Previous: FedPKDA](./fedpkda.md)
-[附录: 数学原理](./math.md)
+[Previous: FedPKDA](./fedpkda.md)<br>
+[附录: 实验结果](./experiment.md)<br>
+[附录: 数学原理](./math.md)<br>
