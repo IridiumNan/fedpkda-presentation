@@ -11,7 +11,7 @@
 
 - 特征提取与裁剪 (Clipping)
 - 本地类原型计算 (均值特征)
-- 拉普拉斯噪声注入机制
+- [拉普拉斯噪声](https://en.wikipedia.org/wiki/Laplace_distribution) 注入机制
 - 上传**带噪原型**至服务器
 
 ## 3.3 模块二: 服务器端几何滤波
@@ -32,6 +32,10 @@
 
 - Fisher Information Matrix 计算
 - 重要性加权聚合
+
+## 伪代码
+
+![伪代码图片](./images/pic5_algo.png)
 
 ---
 
