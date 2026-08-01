@@ -27,7 +27,7 @@ AI训练对于数据有非常大的需求
 > Centralized machine learning: move the data to the computation<br>
 > Federated (machine) Learning: move the computation to the data<br>
 
-也就是说 **联邦学习不传输数据, 而是传输由原始数据计算得来的经验**
+也就是说 **联邦学习不传输原始数据, 而是传输由原始数据计算得来的经验**
 在机器学习中，经验的载体是 **模型的权重或者梯度**
 
 ## 1.2 联邦学习的基本工作流程
