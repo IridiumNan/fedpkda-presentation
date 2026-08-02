@@ -4,6 +4,10 @@ Personalized Federated Learning with Privacy-Preserving Knowledge Dynamic Alignm
 
 ---
 
+## 开始
+
+[get start](/docs/basic_background.md)
+
 ## 📑 目录
 
 ### 正文
